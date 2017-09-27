@@ -1,0 +1,33 @@
+import numpy as np
+import matplotlib.pyplot as plt
+from matplotlib import rc
+
+rc('font', size=20)
+
+xData500 = (0.0, 5.222, 16.898, 39.082, 54.275, 64.536, 72.898, 80.655, 87.169, 93.110, 98.417)
+yData500 = (0.0067, 0.1015, 0.2009, 0.3002, 0.4018, 0.5011, 0.6004, 0.7020, 0.8013, 0.9006, 1.0)
+xData1000 = (0.0, 4.644, 16.786, 39.526, 54.691, 64.977, 73.800, 81.479, 87.791, 93.796, 99.232)
+yData1000 = (0.0067, 0.1015, 0.2009, 0.3002, 0.4018, 0.5011, 0.6004, 0.7020, 0.8013, 0.9006, 1.0)
+xData1500 = (0.0, 8.304, 21.842, 44.270, 59.359, 69.576, 78.334, 85.286, 91.481, 96.849, 101.902)
+yData1500 = (0.0022, 0.1038, 0.2009, 0.3002, 0.4018, 0.5011, 0.6004, 0.7020, 0.8013, 0.9006, 1.0)
+xData2000 = (0.0, 2.977, 16.853, 42.323, 58.808, 70.040, 78.928, 86.237, 92.591, 98.112, 103.212)
+yData2000 = (0.0203, 0.1015, 0.2009, 0.3002, 0.4018, 0.5011, 0.6004, 0.7020, 0.8013, 0.9006, 1.0)
+xData2500 = (0.0, 7.977, 20.910, 42.827, 57.955, 68.202, 76.928, 83.942, 90.135, 95.706, 100.970)
+yData2500 = (0.0022, 0.1015, 0.2009, 0.3002, 0.4018, 0.5011, 0.6004, 0.7020, 0.8013, 0.9006, 1.0)
+xDataWithoutSelection = (0.0, 12.337, 33.962, 48.185, 58.067, 65.973, 73.118, 79.061, 84.859, 90.013)
+yDataWithoutSelection = (0.1309, 0.2009, 0.3002, 0.4018, 0.5011, 0.6004, 0.7020, 0.8013, 0.9006, 1.0)
+
+plt.figure(num=1, figsize=(8, 6.5))
+plt.axis([0, 120, 0, 1])
+#plt.title('Plot 1', size=14)
+plt.xlabel('Avarage Adversarial Cost')
+plt.ylabel('Evasion rate')
+#plt.plot(xData1, yData1, color='b', linestyle='--', marker='o', label='lambda=1')
+plt.plot(xData500, yData500, color='r', linestyle='-', label='500')
+plt.plot(xData1000, yData1000, color='r', linestyle='--', label='1000')
+plt.plot(xData1500, yData1500, color='g', linestyle='-', label='1500')
+plt.plot(xData2000, yData2000, color='g', linestyle='--', label='2000')
+plt.plot(xData2500, yData2500, color='b', linestyle='-', label='2500')
+plt.plot(xDataWithoutSelection, yDataWithoutSelection, color='b', linestyle='--', label='without selection')
+plt.legend(loc='upper left', fontsize='small')
+plt.savefig('BPSO_security.eps', format='eps')
